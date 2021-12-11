@@ -1,19 +1,27 @@
 import React from "react";
 import "../styles/modal.css";
-import { useDispatch } from "react-redux";
-import { toggleModalFalse } from "../features/modalControl";
-function Modal() {
-    const dispatch = useDispatch()
+import "../styles/datepicker.css";
+
+// modal component
+// props : color - will change the font color
+function Modal(props) {
+    // the modal will hide if you click on the close button or anywhere on the background
     function hideModal() {
-        dispatch(toggleModalFalse());
-        const modal = document.getElementById("modal")
-        modal.style.display = "none"
+        const modal = document.querySelector(".modal");
+        const modalwrapper = document.querySelector(".modal-page-wrapper");
+        modalwrapper.classList.remove("modal-toggle");
+        modal.classList.remove("modal-toggle2");
     }
     return (
-        <div id="modal" className="modal">
-            <p className="modal-message">Employee Created</p>
-            <button onClick={hideModal} className="modal-close"></button>
-        </div>
+        <React.Fragment>
+            <div onClick={hideModal} className="modal-page-wrapper"></div>
+            <div className="modal">
+                <p style={{ color: props.fontcolor }} className="modal-message">
+                    Employee Created
+                </p>
+                <button onClick={hideModal} className="modal-close"></button>
+            </div>
+        </React.Fragment>
     );
 }
 

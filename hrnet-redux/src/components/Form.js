@@ -1,29 +1,24 @@
 import React from "react";
 import StateSelector from "./StateSelector";
-import { useDispatch, useSelector } from "react-redux";
-import { toggleModalTrue, toggleModalFalse } from "../features/modalControl";
+import Example from "./Datepickers";
+
+// Form component 
 function Form() {
-    const dispatch = useDispatch();
-    const state = useSelector((state) => state.modalToggle.modalVisible);
-    
     // form treatment
     function saveEmployee() {
         const form = document.getElementById("create-employee");
         [...form.elements].forEach((item) => {
             console.log(item.value);
+            console.log(item)
         });
-        dispatch(toggleModalTrue());
-        console.log(state)
-        showmodal(state)
+        showmodal();
     }
-    function showmodal (state) {
-        const modal = document.getElementById("modal");
-        if (state === true) {
-            modal.style.display = "block";
-        } else if (state === false) {
-            toggleModalFalse()
-            modal.style.display = "none";
-        }
+    // toggle the modal
+    function showmodal() {
+        const modal = document.querySelector(".modal");
+        const modalwrapper = document.querySelector(".modal-page-wrapper");
+        modalwrapper.classList.add("modal-toggle")
+        modal.classList.add("modal-toggle2")
     }
     return (
         <div className="container">
@@ -35,10 +30,10 @@ function Form() {
                 <input type="text" id="last-name" />
 
                 <label htmlFor="date-of-birth">Date of Birth</label>
-                <input id="date-of-birth" type="text" />
+                <Example startDate={new Date(2000,0,1)}/>
 
                 <label htmlFor="start-date">Start Date</label>
-                <input id="start-date" type="text" />
+                <Example  startDate={new Date()}/>
 
                 <fieldset className="address">
                     <legend>Address</legend>

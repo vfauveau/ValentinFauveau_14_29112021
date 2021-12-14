@@ -1,24 +1,36 @@
 import React from "react";
 import StateSelector from "./StateSelector";
 import Example from "./Datepickers";
-
+import { showModal } from "./Modal";
 // Form component 
 function Form() {
     // form treatment
     function saveEmployee() {
-        const form = document.getElementById("create-employee");
-        [...form.elements].forEach((item) => {
-            console.log(item.value);
-            console.log(item)
-        });
-        showmodal();
-    }
-    // toggle the modal
-    function showmodal() {
-        const modal = document.querySelector(".modal");
-        const modalwrapper = document.querySelector(".modal-page-wrapper");
-        modalwrapper.classList.add("modal-toggle")
-        modal.classList.add("modal-toggle2")
+        const firstName = document.getElementById("first-name");
+        const lastName = document.getElementById("last-name");
+        const dateOfBirth = document.getElementById("date-of-birth");
+        const startDate = document.getElementById("start-date");
+        const department = document.getElementById("department");
+        const street = document.getElementById("street");
+        const city = document.getElementById("city");
+        const state = document.getElementById("state");
+        const zipCode = document.getElementById("zip-code");
+
+        const employees = JSON.parse(localStorage.getItem("employees")) || [];
+        const employee = {
+            firstName: firstName.value,
+            lastName: lastName.value,
+            dateOfBirth: dateOfBirth.value,
+            startDate: startDate.value,
+            department: department.value,
+            street: street.value,
+            city: city.value,
+            state: state.value,
+            zipCode: zipCode.value,
+        };
+        employees.push(employee);
+        localStorage.setItem("employees", JSON.stringify(employees));
+        showModal();
     }
     return (
         <div className="container">
@@ -30,10 +42,10 @@ function Form() {
                 <input type="text" id="last-name" />
 
                 <label htmlFor="date-of-birth">Date of Birth</label>
-                <Example startDate={new Date(2000,0,1)}/>
+                <Example id={"date-of-birth"} startDate={new Date(2000,0,1)}/>
 
                 <label htmlFor="start-date">Start Date</label>
-                <Example  startDate={new Date()}/>
+                <Example id={"start-date"} startDate={new Date()}/>
 
                 <fieldset className="address">
                     <legend>Address</legend>

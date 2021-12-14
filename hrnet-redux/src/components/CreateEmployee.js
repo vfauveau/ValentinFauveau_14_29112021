@@ -7,7 +7,7 @@ function CreateEmployee() {
         <div>
             <Title></Title>
             <Form></Form>
-            <Modal fontcolor="black"></Modal>
+            <Modal ></Modal>
         </div>
     );
 }

@@ -9,7 +9,7 @@ import "react-datepicker/dist/react-datepicker.css";
 const Example = (props) => {
     const [startDate, setStartDate] = useState(props.startDate);
     return (
-      <DatePicker id={props.id} selected={startDate} onChange={(date) => setStartDate(date)} />
+      <DatePicker id={props.id} selected={startDate} dateFormat={"dd/MM/yyyy"} onChange={(date) => setStartDate(date)} />
     );
   };
 export default Example

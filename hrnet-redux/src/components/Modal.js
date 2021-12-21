@@ -19,15 +19,13 @@ export function hideModal() {
 // props : color - will change the font color
 function Modal() {
     return (
-        <React.Fragment>
+        <div style={{height:"100%"}}>
             <div onClick={hideModal} className="modal-page-wrapper"></div>
             <div className="modal">
-                <p className="modal-message">
-                    Employee Created
-                </p>
+                <p className="modal-message">Employee Created</p>
                 <button onClick={hideModal} className="modal-close"></button>
             </div>
-        </React.Fragment>
+        </div>
     );
 }
 

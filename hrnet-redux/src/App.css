@@ -14,7 +14,7 @@
     text-align: center;
     display: none;
 }
-.modal-close{
+.modal-close {
     cursor: pointer;
     z-index: 100;
 }
@@ -29,7 +29,7 @@ h6 {
     padding: 0;
 }
 
-header{
+header {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,14 +49,18 @@ header{
 }
 form {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
 }
 label {
     display: block;
     margin-top: 1rem;
     margin-bottom: 10px;
 }
-
 .address {
     margin-top: 10px;
 }
+fieldset input {
+    width: 205px;
+    margin-bottom: 6px;
+}
+

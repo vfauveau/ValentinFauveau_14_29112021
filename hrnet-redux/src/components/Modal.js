@@ -1,6 +1,5 @@
 import React from "react";
 import "../styles/modal.css";
-import "../styles/datepicker.css";
 
 export function showModal() {
     const modal = document.querySelector(".modal");

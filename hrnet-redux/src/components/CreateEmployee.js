@@ -1,13 +1,14 @@
-import React from "react";
-import Modal from "./Modal";
+import React, { useRef } from "react";
+import Modal from "basic-modal-component1";
 import Form from "./Form";
 import Title from "./Title";
-function CreateEmployee() {
+function CreateEmployee(props) {
+    let modalRef = useRef();
     return (
         <div>
             <Title></Title>
-            <Form></Form>
-            <Modal ></Modal>
+            <Form modalRef={modalRef}></Form>
+            <Modal message="This is a template message" ref={modalRef}></Modal>
         </div>
     );
 }

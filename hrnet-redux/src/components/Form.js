@@ -1,9 +1,12 @@
 import React from "react";
 import StateSelector from "./StateSelector";
-import Example from "./Datepickers";
-import { showModal } from "./Modal";
+import DatePickerComp from "./DatePickerComp";
+
 // Form component 
-function Form() {
+function Form(props) {
+    function callModal () {
+        props.modalRef.current.showModal()
+      }
     // form treatment
     function saveEmployee() {
         const firstName = document.getElementById("first-name");
@@ -30,7 +33,7 @@ function Form() {
         };
         employees.push(employee);
         localStorage.setItem("employees", JSON.stringify(employees));
-        showModal();
+        callModal();
     }
     return (
         <div className="container">
@@ -42,10 +45,10 @@ function Form() {
                 <input type="text" id="last-name" />
 
                 <label htmlFor="date-of-birth">Date of Birth</label>
-                <Example id={"date-of-birth"} startDate={new Date(2000,0,1)}/>
+                <DatePickerComp id={"date-of-birth"} startDate={new Date(2000,0,1)}/>
 
                 <label htmlFor="start-date">Start Date</label>
-                <Example id={"start-date"} startDate={new Date()}/>
+                <DatePickerComp id={"start-date"} startDate={new Date()}/>
 
                 <fieldset className="address">
                     <legend>Address</legend>

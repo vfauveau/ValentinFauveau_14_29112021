@@ -1,6 +1,5 @@
 import React, { useState, useMemo } from "react";
 import DataTable from "react-data-table-component";
-
 const caseInsensitiveSort = (rowA, rowB) => {
     const a = rowA.firstName.toLowerCase();
     const b = rowB.firstName.toLowerCase();

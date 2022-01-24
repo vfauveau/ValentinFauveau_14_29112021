@@ -8,7 +8,7 @@ function CreateEmployee(props) {
         <div>
             <Title></Title>
             <Form modalRef={modalRef}></Form>
-            <Modal message="This is a template message" ref={modalRef}></Modal>
+            <Modal message="An employee has been created" ref={modalRef}></Modal>
         </div>
     );
 }

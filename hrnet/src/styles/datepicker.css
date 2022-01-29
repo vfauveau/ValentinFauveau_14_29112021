@@ -1,3 +1,6 @@
 .react-datepicker__input-container input{
     width: 245px;
 }
+.react-datepicker__month-container{
+    border : 1px solid black
+}

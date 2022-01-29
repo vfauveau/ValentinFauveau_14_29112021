@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+// Homepage title component
 function Title() {
     return (
         <header>

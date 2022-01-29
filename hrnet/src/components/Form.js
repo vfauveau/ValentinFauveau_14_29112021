@@ -1,6 +1,6 @@
 import React from "react";
 import StateSelector from "./StateSelector";
-import DatePickerComp from "./DatePickerComp";
+import DatePick from "./DatePick";
 
 // Form component 
 function Form(props) {
@@ -45,10 +45,10 @@ function Form(props) {
                 <input type="text" id="last-name" />
 
                 <label htmlFor="date-of-birth">Date of Birth</label>
-                <DatePickerComp id={"date-of-birth"} startDate={new Date(2000,0,1)}/>
+                <DatePick id={"date-of-birth"} startDate={new Date(2000,0,1)}/>
 
                 <label htmlFor="start-date">Start Date</label>
-                <DatePickerComp id={"start-date"} startDate={new Date()}/>
+                <DatePick id={"start-date"} startDate={new Date()}/>
 
                 <fieldset className="address">
                     <legend>Address</legend>

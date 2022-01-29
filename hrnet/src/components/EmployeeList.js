@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Table from "./Table";
 
+// Page component containing the list of created employees.
 function EmployeeList() {
     return (
         <React.Fragment>

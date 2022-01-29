@@ -46,6 +46,7 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-bottom: 30px;
 }
 form {
     display: flex;
@@ -63,4 +64,3 @@ fieldset input {
     width: 205px;
     margin-bottom: 6px;
 }
-

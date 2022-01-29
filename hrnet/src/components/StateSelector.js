@@ -238,6 +238,7 @@ const states = [
     },
 ];
 
+// component that generates an option for each state in the database
 function StateSelector() {
     const statesList = states.map((state) => <option key={state.abbreviation} value={state.abbreviation}>{state.name}</option>);
     return (
